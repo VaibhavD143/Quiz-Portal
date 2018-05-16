@@ -1,9 +1,28 @@
+<?php
+	if (session_status() == PHP_SESSION_NONE) {
+		session_start();
+	}
+
+	require_once('authenticate.php');
+
+	if(isLoggedIn()){
+		header('location: quiz.php');
+		exit();
+	}
+
+	if(!isset($_GET['qid']) || !ctype_digit($_GET['qid'])){
+		header('location: index.php');
+		exit();
+	}
+?>
+
 <html>
 
 	<?php
 		$title = "Login";
 		include("header.php");
 	?>
+
 	<body>
 		<nav>
 			<div class="nav-wrapper indigo darken-3">
@@ -14,7 +33,8 @@
 
 			<div class="row">
   				<div class="col card hoverable s6 offset-s3 ">
-    				<form method="POST" action="">
+    				<form method="POST" action="do_login.php">
+						<input type="hidden" name="qid" value="<?php echo $_GET['qid']; ?>">
 						<div class="center-align">
 							<img src="imageset/csi-logo.png" alt="" class="circle responsive-img hoverable" style="padding-top: 2%; max-width: 40%;">
 						</div>

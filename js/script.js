@@ -2,25 +2,27 @@
 $(document).ready(function(){
     $('.sidenav').sidenav();
 	$('.tooltipped').tooltip();
-	console.log($('[id^="button-"]').length);
-	if($('[id^="button-"]').length){
-		console.log("found");
-		$('#button-Questions').click(function(){
-			$('#Questions').css('display','block');
-			$('#Profile').css('display','none');
-			$('#Rules').css('display','none');
-		});
 
-		$('#button-Profile').click(function(){
-			$('#Questions').css('display','none');
-			$('#Profile').css('display','block');
-			$('#Rules').css('display','none');
-		});
-
-		$('#button-Rules').click(function(){
-			$('#Questions').css('display','none');
-			$('#Profile').css('display','none');
-			$('#Rules').css('display','block');
-		});
-	}
 });
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/Quiz-Portal";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
