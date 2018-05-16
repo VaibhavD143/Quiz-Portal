@@ -23,6 +23,19 @@ session_start();
         }
         
 ?>
+              <script>
+  $(document).ready(function(){
+    $('.tooltipped').tooltip();
+      $(document).ready(function(){
+    $('.tap-target').tapTarget();
+  });
+      
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+          
+  });
+</script>
 <div  style="background-color:">
 		<div class="row">
 			<div class="hoverable col s12 center">
@@ -30,16 +43,47 @@ session_start();
 				
 			
 <!----------------------------------------list of quiz -------------------->
-    
+          
+     
                 <form action="monitor.php" method="post">
                 <div class="col s6 offset-s1">
                     <?php include 'quiz_list.php'; ?>
                 </div>
                 <div class="col s1">
-                        <button class="btn waves-effect waves-light" type="submit" name="action">GO
+                        <button class="btn waves-effect waves-light " data-tooltip="Select Quiz" type="submit" name="action">GO
                         <i class="material-icons right">send</i>
                         </button> 
                 </div>
+                    <!----------------------Tap Target Structure-------------------->
+                    
+      <a class="waves-effect  waves-light col s1 btn " onclick="$('.tap-target').tapTarget('open')">Need Help?</a>
+    <!--    <a class="waves-effect waves-light btn" onclick="$('.tap-target').tapTarget('close')">Close Help </a> -->
+        <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+          <a id="menu" class="btn btn-floating btn-large cyan">
+            <i class="material-icons">menu</i>
+          </a>
+        </div>
+
+        <div class="tap-target cyan" data-target="menu">
+          <div class="tap-target-content white-text">
+            <h5>How to change any user data?</h5>
+            <p class="white-text">Overwrite old data with new data in all fileds you want to change and click on change. </p>
+          </div>
+        </div>
+ <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn red modal-trigger" href="#modal1">Important Note!!</a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>How to Reset User or User Timer </h4>
+      <p>Set "NULL" to all of timer field(start time,Finished,Time_elapsed)</p>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-close waves-effect waves-green btn-flat">Got IT!</a>
+    </div>
+  </div>
+          
                 </form>
                 </div>
 		</div>
@@ -112,7 +156,7 @@ session_start();
               <th style="width:9%"><input style="width:100%"  type="text" name="time_finished" value="<?php echo $row['time_completed']; ?>" /></th>
               <th style="width:9%"><input style="width:100%"  type="text" name="time_elapsed" placeholder="<?php echo $row['time_elapsed']; ?>" /></th>
               <th style="width:9%"><input style="width:100%"  type="text" name="score" value="<?php echo $row['score']; ?>" /></th>
-              <th ><button type="submit" value="submit" class="waves-effect waves-light btn-small">Change</button></th>
+              <th ><button type="submit" value="submit" class="waves-effect waves-light btn-small tooltipped" data-tooltip="Update Or Reload Data">Change</button></th>
 			  </tr>
           </form>
             <?php $count++;   } } }?>
