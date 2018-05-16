@@ -95,7 +95,13 @@ if(!isset($_SESSION["uname"]))
 			
 			
             <form action="upload_user.php" method="post" enctype="multipart/form-data"> 
-			<?php if(isset($selected_quiz)) { ?><input type="hidden" name="selected_quiz" value="<?php echo $selected_quiz; ?>"> <?php } ?>
+			<?php if(isset($selected_quiz)) {  if($resultset = $database_handler->query("SELECT * from quiz where quiz_id='$selected_quiz';"))
+                           {
+                            $row = $resultset->fetch_assoc();
+                           $duration= $row['duration'];
+                                            
+        }
+                             ?><input type="hidden" name="selected_quiz" value="<?php echo $selected_quiz; ?>"> <?php } ?>
          
 			<div class="col s3 hoverable offset-s1 z-depth-1">
 			<div class="container">
@@ -107,7 +113,7 @@ if(!isset($_SESSION["uname"]))
 				<div class="row">
 					<div class = "file-field input-field">
 						<div class = "btn"><i class="material-icons left">file_upload</i>
-							<span>Browse</span>
+							<span>Browse</span>  
 							<input type = "file" />
 						</div>
 						<div class="row"></div>
@@ -138,34 +144,31 @@ if(!isset($_SESSION["uname"]))
 	               <div class="row">			
                        <div class="col s3">
                            <div class="row">
-                               <div class="col s1"><i class="material-icons left">cancel</i></div>
+                               <div class="col s1"><?php if(isset($selected_quiz) &&  (!$row['is_available']==0)) { ?><i class="material-icons left">cancel</i><?php } ?></div>
                                <div class="col s2 offset-s1" >
 				<form action="disable.php" method="post"> 
-			     <?php if(isset($selected_quiz)) { ?><input type="hidden" name="selected_quiz" value="<?php echo $selected_quiz; ?>" /> <?php } ?>
+			     <?php if(isset($selected_quiz) &&  (!$row['is_available']==0)) { ?><input type="hidden" name="selected_quiz" value="<?php echo $selected_quiz; ?>" />
                     
-					<input type="submit" style="font-size:18px;color:white" value="Disable"  class="teal lighten-2" />
+					<input type="submit" style="font-size:18px;color:white" value="Disable"  class="teal lighten-2" /> <?php } ?>
                                    </form></div></div></div>
-                        <div class="col s3 offset-s3">
-                            <div class="row"><div class="col s1"><i class="material-icons  lightblue left">check</i></div>
+                        <div class="col s3 offset-s1">
+                            <div class="row"><div class="col s1">
+                                <?php if(isset($selected_quiz) &&  (!$row['is_available']!=0)) { ?><i class="material-icons  lightblue left">check</i><?php } ?></div>
                                 <div class="col s2 offset-s1">
                                 <form action="Enable.php" method="post"> 
-			     <?php if(isset($selected_quiz)) { ?><input type="hidden" name="selected_quiz" value="<?php echo $selected_quiz; ?>"> <?php } ?>
+			     <?php if(isset($selected_quiz) && (!$row['is_available']!=0)) { ?><input type="hidden" name="selected_quiz" value="<?php echo $selected_quiz; ?>"> 
                   
-                           <input type="submit" style="font-size:18px;color:white" class="teal lighten-2" value="Enable" class="" />
+                           <input type="submit" style="font-size:18px;color:white" class="teal lighten-2" value="Enable" class="" /><?php } ?>
                                     </form></div></div>
                 </div>
+                       <div class="row"></div>
                 <form action="delete.php" method="post"> 
                 <?php if(isset($selected_quiz)) { ?><input type="hidden" name="selected_quiz" value="<?php echo $selected_quiz; ?>"> <?php } ?>
 				<div class="row">
 					<button type="submit"  class="waves-effect waves-light btn"><i class="material-icons left">delete_forever</i>Delete</button>
                     </div></form>
                 <form action="time.php" method="post"> 
-				<?php if(isset($selected_quiz)) { if($resultset = $database_handler->query("SELECT * from quiz where quiz_id='$selected_quiz';"))
-                           {
-                            $row = $resultset->fetch_assoc();
-                           $duration= $row['duration'];
-                           }
-                             ?><input type="hidden" name="selected_quiz" value="<?php echo $selected_quiz; ?>"> <?php } ?>
+				<?php if(isset($selected_quiz)) { ?><input type="hidden" name="selected_quiz" value="<?php echo $selected_quiz; ?>"> <?php } ?>
                     <div class="row">
 					<div class="input-field col s6">
 					  <i class="material-icons prefix">update</i>
