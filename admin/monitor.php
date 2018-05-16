@@ -21,6 +21,7 @@ session_start();
             $selected_quiz=$_POST['selected_quiz'];
                 
         }
+        
 ?>
 <div  style="background-color:">
 		<div class="row">
@@ -43,7 +44,7 @@ session_start();
                 </div>
 		</div>
 	</div>	
-
+<?php if(isset($selected_quiz))if($selected_quiz!=-1){?> 
 
 <!---------------------------------------Print Status Message--------------------------------------------->
 
@@ -114,7 +115,7 @@ session_start();
               <th ><button type="submit" value="submit" class="waves-effect waves-light btn-small">Change</button></th>
 			  </tr>
           </form>
-            <?php $count++;   } } ?>
+            <?php $count++;   } } }?>
         
         </tbody>
       </table>
