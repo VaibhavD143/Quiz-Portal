@@ -4,7 +4,7 @@ if(!isset($_SESSION["uname"]))
 session_start();
     if(!isset($_SESSION["uname"]))
     {
-        $msg = 'Enter Username and Password First to use Portal';
+        $msg = 'Enter Username and Password First to monitor Portal';
         include 'wrong_login.php';
     }
     else

@@ -1,4 +1,9 @@
+<?php
+session_start();
 
+if(isset($_SESSION['uname']))
+{ ?><meta http-equiv="refresh" content="0;URL=main_dashboard.php" /><?php }
+?>
   <!DOCTYPE html>
   <html>
     <head>

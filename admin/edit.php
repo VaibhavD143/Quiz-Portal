@@ -144,24 +144,24 @@ if(!isset($_SESSION["uname"]))
 	               <div class="row">			
                        <div class="col s3">
                            <div class="row">
-                               <div class="col s1"><?php if(isset($selected_quiz) &&  (!$row['is_available']==0)) { ?><i class="material-icons left">cancel</i><?php } ?></div>
+                               <div class="col s1"><?php if(isset($selected_quiz) &&  ($row['is_available']==1)) { ?><i class="material-icons left">cancel</i><?php } ?></div>
                                <div class="col s2 offset-s1" >
 				<form action="disable.php" method="post"> 
-			     <?php if(isset($selected_quiz) &&  (!$row['is_available']==0)) { ?><input type="hidden" name="selected_quiz" value="<?php echo $selected_quiz; ?>" />
+			     <?php if(isset($selected_quiz) &&  ($row['is_available']==1)) { ?><input type="hidden" name="selected_quiz" value="<?php echo $selected_quiz; ?>" />
                     
 					<input type="submit" style="font-size:18px;color:white" value="Disable"  class="teal lighten-2" /> <?php } ?>
                                    </form></div></div></div>
                         <div class="col s3 offset-s1">
                             <div class="row"><div class="col s1">
-                                <?php if(isset($selected_quiz) &&  (!$row['is_available']!=0)) { ?><i class="material-icons  lightblue left">check</i><?php } ?></div>
+                                <?php if(isset($selected_quiz) &&  ($row['is_available']==0)) { ?><i class="material-icons  lightblue left">check</i><?php } ?></div>
                                 <div class="col s2 offset-s1">
                                 <form action="Enable.php" method="post"> 
-			     <?php if(isset($selected_quiz) && (!$row['is_available']!=0)) { ?><input type="hidden" name="selected_quiz" value="<?php echo $selected_quiz; ?>"> 
+			     <?php if(isset($selected_quiz) && ($row['is_available']==0)) {?><input type="hidden" name="selected_quiz" value="<?php echo $selected_quiz; ?>"> 
                   
                            <input type="submit" style="font-size:18px;color:white" class="teal lighten-2" value="Enable" class="" /><?php } ?>
                                     </form></div></div>
                 </div>
-                       <div class="row"></div>
+                </div>
                 <form action="delete.php" method="post"> 
                 <?php if(isset($selected_quiz)) { ?><input type="hidden" name="selected_quiz" value="<?php echo $selected_quiz; ?>"> <?php } ?>
 				<div class="row">

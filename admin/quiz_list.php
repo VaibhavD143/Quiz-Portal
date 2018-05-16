@@ -1,7 +1,7 @@
 <!-- Dropdown Trigger -->
 				<div class="input-field col s9 offset-s3">
 					<select name="selected_quiz">
-						<option value="disabled_selected">Choose your Quiz</option>
+						<option value='0'>Choose your Quiz</option>
 						<?php
                             require_once('connect.php');
                             if(!$resultset = $database_handler->query("SELECT * from quiz ;"))
