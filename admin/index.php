@@ -23,15 +23,15 @@
     </div>
     <div class="card-content">
       <span class="card-title activator grey-text text-darken-4">Login<i class="material-icons right">more_vert</i></span>
-       <form action="./dashboard.html" method="post">
+       <form action="./dashboard.php" method="POST">
 	  <div class="input-field">
           <i class="material-icons prefix">account_circle</i>
-          <input id="icon_prefix" type="text" class="validate">
+          <input id="icon_prefix" name="uname" type="text" class="validate">
           <label for="icon_prefix">Username</label>
         </div>
 	  <div class="input-field">
 		  <i class="material-icons prefix">lock</i>
-          <input id="password" type="password" class="validate">
+          <input id="password" name="passwd" type="password" class="validate">
           <label for="password">Password</label>
         </div>
 		  <button class="btn waves-effect waves-light" type="submit" name="action">Submit

@@ -6,14 +6,14 @@
 <!--<html>
 <?php
 $title = "Home";
-include("header.php");
+include("./header.php");
 ?>
 
 <body>
 <?php
 $heading = "Hii";
 $menu = array("Abc"=>"Pqr");
-include("dashboard.php");
+include("./dashboard.php");
 ?>
 </body>
 </html>
