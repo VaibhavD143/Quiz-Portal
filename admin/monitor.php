@@ -55,6 +55,19 @@ session_start();
 <!------------------------------------------ User Informztion Table --------------------------------->
 	
     <div class="row">
+        <style>
+        ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: red;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: red;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: red;
+               }</style>
 	<div class="col s10  offset-s1">
       <table class="striped">
         <thead>
@@ -65,8 +78,9 @@ session_start();
 			  <th style="width:11%">Username</th>
 			  <th style="width:11%">Password</th>
 			  <th style="width:11%">Start time</th>
-			  <th style="width:11%" style="width:11%">Finished</th>
-			  <th style="width:11%">Score</th>
+			  <th style="width:11%">Finished</th>
+			  <th style="width:11%">Time_Elapsed</th>
+              <th style="width:11%">Score</th>
 			  <th style="width:11%">Update</th>
           </tr>
         </thead>
@@ -89,18 +103,19 @@ session_start();
           <input type="hidden" name="user_id" value="<?php echo $row['user_id']; ?>">
           <tr class="hoverable" style="border-bottom:none">
               <th><?php echo $count; ?></th>
-              <th style="width:11%"><input style="width:100%"  type="text" name="name" value="<?php echo $row['name']; ?>" /></th>
-              <th style="width:11%"><input style="width:100%"  type="text" name="lastname" value="<?php echo $row['lastname']; ?>" /></th>
-              <th style="width:11%"><input style="width:100%"  type="text" name="uname" value="<?php echo $row['name']; ?>" /></th>
-              <th style="width:11%"><input style="width:100%"  type="text" name="passwd" value="<?php echo $row['password']; ?>" /></th>
-              <th style="width:11%"><input style="width:100%"  type="text" name="time_started" value="<?php echo $row['time_started']; ?>" /></th>
-              <th style="width:11%"><input style="width:100%"  type="text" name="time_finished" value="<?php echo $row['time_finished']; ?>" /></th>
-              <th style="width:11%"><input style="width:100%"  type="text" name="score" value="<?php echo $row['score']; ?>" /></th>
-              <th ><button type="submit" value="submit" class="waves-effect waves-light btn-small"><i class="material-icons left">update</i>change</button></th>
+              <th style="width:9%"><input style="width:100%"  type="text" name="firstname" value="<?php echo $row['firstname']; ?>" /></th>
+              <th style="width:9%"><input style="width:100%"  type="text" name="lastname" value="<?php echo $row['lastname']; ?>" /></th>
+              <th style="width:9%"><input style="width:100%"  type="text" name="username" value="<?php echo $row['username']; ?>" /></th>
+              <th style="width:9%"><input style="width:100%"  type="text" name="passwd" value="<?php echo $row['password']; ?>" /></th>
+              <th style="width:9%"><input style="width:100%"  type="text" name="time_started" value="<?php echo $row['time_started']; ?>" /></th>
+              <th style="width:9%"><input style="width:100%"  type="text" name="time_finished" value="<?php echo $row['time_completed']; ?>" /></th>
+              <th style="width:9%"><input style="width:100%"  type="text" name="time_elapsed" placeholder="<?php echo $row['time_elapsed']; ?>" /></th>
+              <th style="width:9%"><input style="width:100%"  type="text" name="score" value="<?php echo $row['score']; ?>" /></th>
+              <th ><button type="submit" value="submit" class="waves-effect waves-light btn-small">Change</button></th>
 			  </tr>
           </form>
-            <?php $count++;  } } ?>
-         
+            <?php $count++;   } } ?>
+        
         </tbody>
       </table>
 	</div>
