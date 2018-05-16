@@ -40,7 +40,7 @@
 			<div class="row">
   				<div class="col card hoverable s6 offset-s3 ">
 					<div class="center-align">
-						<img src="imageset/csi-logo.png" alt="" class="circle responsive-img hoverable" style="padding-top: 2%; max-width: 40%;">
+						<img src="imageset/csi-logo.png" alt="" class="circle responsive-img hoverable" style="padding-top: 2%; max-width: 30%;">
 					</div>
 					<div class="card-content center-align">
 						<span class="card-title blue-text text-darken-4"><h4>Select</h4></span>
