@@ -1,5 +1,4 @@
-
-  <!DOCTYPE html>
+ <!DOCTYPE html>
   <html>
     <head>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -22,16 +21,17 @@
       <img class="activator responsive "   src="images/csi-logo.png">
     </div>
     <div class="card-content" style="background-color:#e8eaf6;">
-      <span class="card-title activator grey-text text-darken-4">Login<i class="material-icons right">more_vert</i></span>
-      <form action="./dashboard.html" method="post">
+        <span class="card-title activator grey-text text-darken-4"><b style="color:red"><i class="material-icons prefix">priority_high</i><?php echo $msg; ?></span></b>
+        <span class="card-title activator grey-text text-darken-4">Login<i class="material-icons right">more_vert</i></span>
+      <form action="./dashboard.php" method="post">
 	  <div class="input-field">
           <i class="material-icons prefix">account_circle</i>
-          <input id="icon_prefix" type="text" class="validate">
+          <input id="icon_prefix" name="uname" type="text" class="validate">
           <label for="icon_prefix">Username</label>
         </div>
 	  <div class="input-field">
 		  <i class="material-icons prefix">lock</i>
-          <input id="password" type="password" class="validate">
+          <input id="password" type="password" name="passwd" class="validate">
           <label for="password">Password</label>
         </div>
 		  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
