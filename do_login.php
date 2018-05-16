@@ -13,7 +13,7 @@
 	if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['qid'])){
 		try{
 			require_once('connection.php');
-			$query = $database_handler->prepare("SELECT user_id,time_started,time_completed,time_elapsed,score FROM user WHERE name=? AND password=? AND quiz_id=?;");
+			$query = $database_handler->prepare("SELECT user_id,time_started,time_completed,time_elapsed,score FROM user WHERE username=? AND password=? AND quiz_id=?;");
 			$query->bind_param('ssi',$_POST['username'],$_POST['password'],$_POST['qid']);
 			$query->execute();
 			$query->store_result();

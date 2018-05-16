@@ -9,5 +9,5 @@
 	if($database_handler->connect_error) {
 	  die("Connection Error");
 	}
-	
+
 ?>
