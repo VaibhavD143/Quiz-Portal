@@ -23,12 +23,7 @@
 	<div class="nav-wrapper indigo darken-3 hoverable">
 		<a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
 		<a href="#" class="brand-logo center"><?php echo $heading; ?></a>
-		<ul id="nav-mobile" class="right hide-on-med-and-down">
-			<li>
-				<div id="timer">
-				</div>
-			</li>
-		</ul>
+		<div id="quiz-countdown" class="brand-logo right white-text left-align tooltipped" style="padding-right:10%;" data-position="down" data-tooltip="Time Left"></div>
 	</div>
 </nav>
 </div>

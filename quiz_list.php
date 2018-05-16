@@ -1,9 +1,34 @@
 <html>
 
 	<?php
+		if (session_status() == PHP_SESSION_NONE) {
+			session_start();
+		}
+
+		require_once('authenticate.php');
+
+		if(isLoggedIn()){
+			header('location: quiz.php');
+			exit();
+		}
+
+		require_once('connection.php');
+
+		if(!$resultset = $database_handler->query("SELECT * from quiz where is_available = 1;")){
+			die("Query error");
+		}
+
+		$quizzes = array();
+		while($row = $resultset->fetch_assoc()){
+			$quizzes[$row['name']] = $row['quiz_id'];
+		}
+
 		$title = "Available Quizzes";
 		include("header.php");
+
 	?>
+
+
 	<body>
 		<nav>
 			<div class="nav-wrapper indigo darken-3">
@@ -23,8 +48,8 @@
 							<div class="col s12">
 								<div class="collection center-align">
 									<!--<div class="collection-header blue-text text-darken-4"><h4>Select</h4></div>-->
-									<?php $quizzes=array("Quiz1"=>"1", "Quiz2"=>"2");
-									foreach($quizzes as $name => $id) { ?>
+									<?php //$quizzes=array("Quiz1"=>"1", "Quiz2"=>"2");
+										foreach($quizzes as $name => $id) { ?>
 										<a href="login.php?qid=<?php echo $id; ?>" class="collection-item waves-effect waves-light indigo darken-1 white-text"><?php echo $name; ?></a>
 									<?php } ?>
 								</div>

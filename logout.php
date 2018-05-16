@@ -6,10 +6,8 @@
 	require_once('authenticate.php');
 
 	if(isLoggedIn()){
-		header('location: quiz.php');
-		exit();
+		removeCookies();
+		removeSessionVariables();
 	}
-	else{
-		include_once('quiz_list.php');
-	}
+	echo "<meta http-equiv='refresh' content='0;url=index.php'>";
 ?>

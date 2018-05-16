@@ -8,7 +8,8 @@
 				</p>
 			</div>
 			<div class="card-action">
-				<a href="#" class="btn indigo">Start Quiz</a>
+				<a href="#" class="btn indigo" id="start-button">Start Quiz</a>
+				<div id="start-timer"></div>
 			</div>
 		</div>
 	</div>
