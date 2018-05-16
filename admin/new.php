@@ -1,4 +1,4 @@
-<!--------------------- Header and Side nav bar code ---------------->
+    <!--------------------- Header and Side nav bar code ---------------->
 <?php
 session_start();
 if(!isset($_SESSION["uname"]))
@@ -48,4 +48,4 @@ if(!isset($_SESSION["uname"]))
 
 <!---------------------- Footer--------------------------------------->
 <?php include 'footer.php'; }?>
-	
+	   
