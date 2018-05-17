@@ -77,7 +77,7 @@ session_start();
   <div id="modal1" class="modal">
     <div class="modal-content">
       <h4>How to Reset User or User Timer </h4>
-      <p>Set "NULL" to all of timer field(start time,Finished,Time_elapsed)</p>
+      <p>Set "NULL" to all of timer field(start time,Finished,Time_elapsed) and immediately refresh user question page(if user is logged in)OR keep logged out that user(no need to refresh user question page if user is logged out.<br>you have to follow this steps only when you are changing time_elapsed field.</p>
     </div>
     <div class="modal-footer">
       <a class="modal-close waves-effect waves-green btn-flat">Got IT!</a>

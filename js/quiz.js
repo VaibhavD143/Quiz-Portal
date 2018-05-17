@@ -1,5 +1,5 @@
 var started = false;
-var save_delay = 5;
+var save_delay = 30;
 
 $(document).ready(function(){
 
