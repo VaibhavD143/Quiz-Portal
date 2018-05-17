@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col s12 m12">
-		<div class="card indigo lighten-3">
+		<div class="card indigo">
 			<div class="card-content white-text">
 				<span class="card-title">Rules</span>
 				<p>I am a very simple card. I am good at containing small bits of information.
@@ -8,7 +8,7 @@
 				</p>
 			</div>
 			<div class="card-action">
-				<a href="#" class="btn indigo" id="start-button">Start Quiz</a>
+				<a href="#" class="btn green" id="start-button">Start Quiz</a>
 				<div id="start-timer"></div>
 			</div>
 		</div>

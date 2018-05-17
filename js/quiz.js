@@ -1,5 +1,5 @@
 var started = false;
-var save_delay = 5;
+var save_delay = 30;
 
 $(document).ready(function(){
 
@@ -92,7 +92,7 @@ function startCountdown(){
 		var time_show = quiz_duration - time_elapsed;
 
 		$("#quiz-countdown").html(Math.floor(time_show/3600) + ' : ' + Math.floor((time_show%3600)/60) + ' : ' + Math.floor((time_show%3600)%60));
-
+		$("#profile-quiz-countdown").html(Math.floor(time_show/3600) + ' : ' + Math.floor((time_show%3600)/60) + ' : ' + Math.floor((time_show%3600)%60));
 		time_elapsed += 1;
 		setCookie("time_elapsed", time_elapsed, 1);
 

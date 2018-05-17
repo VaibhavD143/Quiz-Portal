@@ -99,7 +99,7 @@
 		</div>
 	<?php }?>
 	<div class="fixed-action-btn">
-		<a id="stop-quiz-button" class="btn-floating btn-large waves-effect waves-light green tooltipped" data-position="left" data-tooltip="Submit Quiz"><i class="material-icons">check</i></a>
+		<a id="stop-quiz-button" class="btn-floating btn-large waves-effect waves-light green tooltipped pulse" data-position="left" data-tooltip="Submit Quiz"><i class="material-icons">check</i></a>
 	</div>
 	</div>
 </form>

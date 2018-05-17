@@ -36,7 +36,6 @@
 			</div>
 		</nav>
 		<div class="container" style="padding-top: 2%;">
-
 			<div class="row">
   				<div class="col card hoverable s6 offset-s3 ">
 					<div class="center-align">
@@ -59,8 +58,9 @@
 					</div>
 				</div>
 			</div>
-
-
 		</div>
+		<?php
+			include("footer.html");
+		?>
 	</body>
 </html>

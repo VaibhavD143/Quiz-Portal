@@ -1,3 +1,4 @@
+<header>
 <ul id="slide-out" class="sidenav">
 	<li>
 		<div class="user-view">
@@ -27,3 +28,4 @@
 	</div>
 </nav>
 </div>
+</header>
