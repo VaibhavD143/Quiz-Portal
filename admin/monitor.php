@@ -77,7 +77,7 @@ session_start();
   <div id="modal1" class="modal">
     <div class="modal-content">
       <h4>How to Reset User or User Timer </h4>
-      <p>Set "NULL" to all of timer field(start time,Finished,Time_elapsed)</p>
+      <p>Set "NULL" to all of timer field(start time,Finished,Time_elapsed) and immediately refresh user question page(if user is logged in)OR keep logged out that user(no need to refresh user question page if user is logged out.<br>you have to follow this steps only when you are changing time_elapsed field.</p>
     </div>
     <div class="modal-footer">
       <a class="modal-close waves-effect waves-green btn-flat">Got IT!</a>
@@ -154,7 +154,7 @@ session_start();
               <th style="width:9%"><input style="width:100%"  type="text" name="passwd" value="<?php echo $row['password']; ?>" /></th>
               <th style="width:9%"><input style="width:100%"  type="text" name="time_started" value="<?php echo $row['time_started']; ?>" /></th>
               <th style="width:9%"><input style="width:100%"  type="text" name="time_finished" value="<?php echo $row['time_completed']; ?>" /></th>
-              <th style="width:9%"><input style="width:100%"  type="text" name="time_elapsed" placeholder="<?php echo $row['time_elapsed']; ?>" /></th>
+              <th style="width:9%"><input style="width:100%"  type="text" name="time_elapsed" value="<?php echo $row['time_elapsed']; ?>" /></th>
               <th style="width:9%"><input style="width:100%"  type="text" name="score" value="<?php echo $row['score']; ?>" /></th>
               <th ><button type="submit" value="submit" class="waves-effect waves-light btn-small tooltipped" data-tooltip="Update Or Reload Data">Change</button></th>
 			  </tr>

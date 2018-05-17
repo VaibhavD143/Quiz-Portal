@@ -34,8 +34,9 @@ else
                      $file = fopen($filename, "r");
                 $count=1;
 	        while (($getData = fgetcsv($file, 10000, ",")) !== FALSE){
-                $sql = "INSERT into user (quiz_id,name,lastname,password,time_started,time_finished,score) 
-                values ('$selected_quiz','$getData[1]','$getData[2]','$getData[3]','$getData[4]','$getData[5]','$getData[6]')";
+                
+                $sql = "INSERT into user (quiz_id,firstname,lastname,username,password)
+                values ('$selected_quiz','$getData[1]','$getData[2]','$getData[3]','$getData[4]')";
              if (!$database_handler->query($sql) === TRUE)  {
                                                       $msg = "Query Error in user entry". $count." ,Try again";
                                                    break;
