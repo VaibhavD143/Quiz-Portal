@@ -14,8 +14,12 @@ session_start();
 ?>
 <!---------------------------Main Body--------------------------->
 <script>
-$(document).ready(function(){
+
+  $(document).ready(function(){
     $('.collapsible').collapsible();
+  });
+  $(document).ready(function(){
+    $('.tap-target').tapTarget();
   });
 </script>
 
@@ -33,13 +37,33 @@ $(document).ready(function(){
 <div class="row">
     <div class="col s3 offset-s2 hoverable z-depth-1">
                 <form action="dashboard_action.php" method="post">
-                    <div class="row">
+                
+  <div class="row">
                     <div class="input-field col s6">
                         <i class="material-icons prefix">account_circle</i>
                       <input  id="first_name" type="text" value="<?php echo $_SESSION['uname']; ?>" name="name" class="validate">
                       <label for="first_name">Username</label>
                     </div>
+                    <!-- Tap Target Structure -->
+                    
+      <a class="waves-effect btn-floating waves-light col s5 offset-s1 btn " onclick="$('.tap-target').tapTarget('open')">Need Help?</a>
+    <!--    <a class="waves-effect waves-light btn" onclick="$('.tap-target').tapTarget('close')">Close Help </a> -->
+        <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+          <a id="menu" class="btn btn-floating btn-large  cyan">
+            <i class="material-icons ">menu</i>
+          </a>
+        </div>
+
+        <div class="tap-target  cyan" data-target="menu">
+          <div class="tap-target-content white-text">
+            <h5>How to change username and password of admin?</h5>
+            <p class="white-text">This is usename and password of admin panel,<br>If You Want to change username or password then Overwrite them with New Credentials and click on Update Button.</p>
+          </div>
+        </div>
+          
+                    
                 </div>
+                    
                 <div class="row">
                     <div class="input-field col s6">
                       <i class="material-icons prefix">lock</i>
@@ -65,7 +89,7 @@ $(document).ready(function(){
         <ul class="collapsible popout " data-collapsible="accordion">
   
   <li>
-    <div class="collapsible-header hoverable teal accent-2"><i class="material-icons">dehaze</i>Total Available Quizes</div>
+    <div class="collapsible-header hoverable  cyan"><i class="material-icons">dehaze</i>Total Available Quizes</div>
     <div class="collapsible-body">
       <?php 
         include 'connect.php';
@@ -88,7 +112,7 @@ $(document).ready(function(){
   </li>
   
   <li>
-     <div class="collapsible-header hoverable teal accent-2"><i class="material-icons">event_available</i>Total Enabled Quizes</div>
+     <div class="collapsible-header hoverable cyan"><i class="material-icons">event_available</i>Total Enabled Quizes</div>
     <div class="collapsible-body">
       <?php 
         include 'connect.php';
@@ -112,7 +136,7 @@ $(document).ready(function(){
   </li>
   
   <li>
-    <div class="collapsible-header hoverable teal accent-2"><i class="material-icons">event_busy</i>Total Disabled Quiz</div>
+    <div class="collapsible-header hoverable cyan"><i class="material-icons">event_busy</i>Total Disabled Quiz</div>
     <div class="collapsible-body">
         <?php 
         include 'connect.php';

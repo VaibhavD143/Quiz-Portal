@@ -14,7 +14,18 @@ if(!isset($_SESSION["uname"]))
 		
 ?>
 <!--------------------------- main body -------------------------------->
-	<?php 
+<script>  $(document).ready(function(){
+    $('.tap-target').tapTarget();
+  });
+      $(document).ready(function(){
+    $('.tap-target1').tapTarget();
+  });
+      $(document).ready(function(){
+    $('.tap-target2').tapTarget();
+  });
+</script>	
+
+<?php 
         if(isset($_POST['selected_quiz']) || isset($selected_quiz))
         {
             if(isset($_POST['selected_quiz']))
@@ -65,6 +76,27 @@ if(!isset($_SESSION["uname"]))
 					Update Questions
 				</div>
 				<div class="divider"></div>
+                <br>
+                                    <!-- Tap Target Structure -->
+                    
+      <a class="waves-effect right btn-floating waves-light col s5 offset-s1 btn " onclick="$('.tap-target').tapTarget('open')">Need Help?</a>
+    <!--    <a class="waves-effect waves-light btn" onclick="$('.tap-target').tapTarget('close')">Close Help </a> -->
+        <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+          <a id="menu" class="btn btn-floating btn-large  cyan">
+            <i class="material-icons ">menu</i>
+          </a>
+        </div>
+
+        <div class="tap-target  cyan" data-target="menu">
+          <div class="tap-target-content white-text">
+            <h5>How to upload Question?</h5>
+            <p class="white-text">You Have to upload the question in csv file with following fields:-
+              1)no. 2)question 3)No of options 4)Right Option(or one Word answer) 5)option A 6)option B .......</p>
+          </div>
+        </div>
+          <br><br>
+       
+                
 				<div class="row">
 					<div class = "file-field input-field">
 						<div class = "btn"><i class="material-icons left">file_upload</i>
@@ -110,7 +142,27 @@ if(!isset($_SESSION["uname"]))
 					Upload User Data
 				</div>
 				<div class="divider"></div>
-				<div class="row">
+                <!------------------------ Tap Target Structure --------------->
+                    <br>
+      <a class="waves-effect right btn-floating waves-light col s5 offset-s1 btn " onclick="$('.tap-target1').tapTarget('open')">Need Help?</a>
+    <!--    <a class="waves-effect waves-light btn" onclick="$('.tap-target').tapTarget('close')">Close Help </a> -->
+        <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+          <a id="menu" class="btn btn-floating btn-large  cyan">
+            <i class="material-icons ">menu</i>
+          </a>
+        </div>
+
+        <div class="tap-target1  cyan" data-target="menu">
+          <div class="tap-target-content white-text">
+            <h5>How to upload user data?</h5>
+            <p class="white-text">You Have to upload data using csv file.<br>
+              csv file fields:- 1)no. 2)firstname 3)lastname 4)username 5)password.</p>
+          </div>
+        </div>
+          <br><br>
+       
+                
+                <div class="row">
 					<div class = "file-field input-field">
 						<div class = "btn"><i class="material-icons left">file_upload</i>
 							<span>Browse</span>  
@@ -141,7 +193,25 @@ if(!isset($_SESSION["uname"]))
 				<div class="row" style="background-color:#f5f5f5">
 					Operations
 				</div>
-	               <div class="row">			
+	   <!------------------------ Tap Target Structure --------------->
+                    <br>
+      <a class="waves-effect right btn-floating waves-light col s5 offset-s1 btn " onclick="$('.tap-target2').tapTarget('open')">Need Help?</a>
+    <!--    <a class="waves-effect waves-light btn" onclick="$('.tap-target').tapTarget('close')">Close Help </a> -->
+        <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+          <a id="menu" class="btn btn-floating btn-large  cyan">
+            <i class="material-icons ">menu</i>
+          </a>
+        </div>
+
+        <div class="tap-target2  cyan" data-target="menu">
+          <div class="tap-target-content white-text">
+            <h5>Some basic operation</h5>
+            <p class="white-text">First line button will help to enable or disable quiz.<br>second line button will delete the quiz and its user and question data.<br>third line tool will help to update time of quiz.</p>
+          </div>
+        </div>
+          <br><br>
+       
+                <div class="row">			
                        <div class="col s3">
                            <div class="row">
                                <div class="col s1"><?php if(isset($selected_quiz) &&  ($row['is_available']==1)) if($selected_quiz!=-1){ ?><i class="material-icons left">cancel</i><?php } ?></div>
