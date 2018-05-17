@@ -154,7 +154,7 @@ session_start();
               <th style="width:9%"><input style="width:100%"  type="text" name="passwd" value="<?php echo $row['password']; ?>" /></th>
               <th style="width:9%"><input style="width:100%"  type="text" name="time_started" value="<?php echo $row['time_started']; ?>" /></th>
               <th style="width:9%"><input style="width:100%"  type="text" name="time_finished" value="<?php echo $row['time_completed']; ?>" /></th>
-              <th style="width:9%"><input style="width:100%"  type="text" name="time_elapsed" placeholder="<?php echo $row['time_elapsed']; ?>" /></th>
+              <th style="width:9%"><input style="width:100%"  type="text" name="time_elapsed" value="<?php echo $row['time_elapsed']; ?>" /></th>
               <th style="width:9%"><input style="width:100%"  type="text" name="score" value="<?php echo $row['score']; ?>" /></th>
               <th ><button type="submit" value="submit" class="waves-effect waves-light btn-small tooltipped" data-tooltip="Update Or Reload Data">Change</button></th>
 			  </tr>

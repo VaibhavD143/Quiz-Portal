@@ -13,8 +13,21 @@ $score = $_POST['score'];
 
 
  require_once('connect.php');
+if(($_POST['time_finished']=="") && ($_POST['time_started']==""))
+{
+      $sql="UPDATE `user` SET  `firstname` = '$firstname', `lastname` = '$lastname', `username` = '$username', `password` = '$passwd', `score` = '$score' WHERE `user_id` = '$user_id'";
+    
+}
+else if(($_POST['time_finished']==""))
+{
+    
+      $sql="UPDATE `user` SET  `firstname` = '$firstname', `lastname` = '$lastname', `username` = '$username', `password` = '$passwd', `time_started` = $time_started, `time_elapsed` = $time_elapsed, `score` = '$score' WHERE `user_id` = '$user_id'";
+    
+}
+else
+{
       $sql="UPDATE `user` SET  `firstname` = '$firstname', `lastname` = '$lastname', `username` = '$username', `password` = '$passwd', `time_started` = $time_started, `time_completed` = $time_finished,`time_elapsed` = $time_elapsed, `score` = '$score' WHERE `user_id` = '$user_id'";
-                           
+}
   if (!$database_handler->query($sql) === TRUE)  {
                                 $msg = "Query Error Try again";
                                 
