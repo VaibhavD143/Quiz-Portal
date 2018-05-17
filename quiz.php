@@ -10,10 +10,34 @@
 		exit();
 	}
 
-	if(isset($_COOKIE['time_completed'])){
+	require_once('connection.php');
+	$query = $database_handler->prepare("SELECT time_started,time_completed,time_elapsed,score FROM user WHERE user_id=?;");
+	$query->bind_param('i',$_COOKIE['user_id']);
+	$query->execute();
+	$query->store_result();
+	$query->bind_result($time_started, $time_completed, $time_elapsed, $score);
+	$query->data_seek(0);
+	$query->fetch();
+
+	setcookie('time_started', $time_started, time()+86400);
+	setcookie('time_completed', $time_completed, time()+86400);
+	setcookie('time_elapsed', $time_elapsed, time()+86400);
+	setcookie('score', $score, time()+86400);
+
+	$query = $database_handler->prepare("SELECT name,duration FROM quiz WHERE quiz_id=?;");
+	$query->bind_param('i',$_COOKIE['quiz_id']);
+	$query->execute();
+	$result = $query->get_result();
+	$quiz = $result->fetch_assoc();
+
+	setcookie('quiz_name', $quiz['name'], time()+86400);
+	setcookie('quiz_duration', $quiz['duration'], time()+86400);
+
+	if($time_completed){
 		echo "<meta http-equiv='refresh' content='0;url=finish.php'>";
 		exit();
 	}
+
 ?>
 <html>
 	<?php

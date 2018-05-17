@@ -4,9 +4,9 @@
 			<div class="background">
 				<img src="imageset/dashboard-background.jpeg">
 			</div>
-			<a href="/profile"><img class="circle center" src="imageset/csi-logo.png"></a>
-			<a href="/profile"><span class="white-text name">Test User</span></a>
-			<a href="/profile"><span class="white-text email">test.user@gmail.com</span></a>
+			<a href="#" class="profile"><img class="circle center" src="imageset/csi-logo.png"></a>
+			<a href="#" class="profile"><span class="white-text name"><?php echo $_COOKIE['username']; ?></span></a>
+			<a href="#" class="profile"><span class="white-text email"><?php echo $_COOKIE['firstname'].' '.$_COOKIE['lastname']; ?></span></a>
 		</div>
 	</li>
 

@@ -27,6 +27,10 @@ $(document).ready(function(){
 		});
 	}
 
+	$('.profile').click(function(){
+		showProfile();
+	});
+
 	if(started){
 		showQuestions();
 		startCountdown();
