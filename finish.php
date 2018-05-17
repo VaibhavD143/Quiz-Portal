@@ -71,28 +71,32 @@
 	?>
 
 	<body>
-		<nav>
-			<div class="nav-wrapper indigo darken-3">
-				<a href="#" class="brand-logo center">Quized Finished</a>
-			</div>
-		</nav>
-		<div class="container" style="padding-top: 2%;">
-			<div class="row">
-  				<div class="col card hoverable s6 offset-s3 ">
-					<div class="center-align">
-						<img src="imageset/csi-logo.png" alt="" class="circle responsive-img hoverable" style="padding-top: 2%; max-width: 40%;">
-					</div>
-					<div class="card-content center-align">
-						<span class="card-title">You Have completed your quiz</span>
-					</div>
-					<div class="card-action right-align">
-						<a href="logout.php" class="btn waves-effect waves-light indigo darken-4" name="action">Logout
-							<i class="material-icons right">send</i>
-						</a>
+		<header>
+			<nav>
+				<div class="nav-wrapper indigo darken-3">
+					<a href="#" class="brand-logo center">Quized Finished</a>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<div class="container" style="padding-top: 2%;">
+				<div class="row">
+	  				<div class="col card hoverable s6 offset-s3 ">
+						<div class="center-align">
+							<img src="imageset/csi-logo.png" alt="" class="circle responsive-img hoverable" style="padding-top: 2%; max-width: 40%;">
+						</div>
+						<div class="card-content center-align">
+							<span class="card-title">You Have completed your quiz</span>
+						</div>
+						<div class="card-action right-align">
+							<a href="logout.php" class="btn waves-effect waves-light indigo darken-4" name="action">Logout
+								<i class="material-icons right">send</i>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</main>
 		<?php
 			include("footer.html");
 		?>
