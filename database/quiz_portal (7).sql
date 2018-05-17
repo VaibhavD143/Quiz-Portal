@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2018 at 02:42 PM
+-- Generation Time: May 17, 2018 at 03:02 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.13
 
@@ -57,10 +57,10 @@ CREATE TABLE `answer` (
 --
 
 INSERT INTO `answer` (`ans_id`, `user_id`, `ques_id`, `answer_provided`) VALUES
-(1200, 26, 85, ''),
-(1202, 26, 86, 'Obama'),
-(1203, 26, 84, 'siddharth yadav'),
-(1208, 26, 83, 'Gandhinagar');
+(1209, 31, 89, 'CSI'),
+(1211, 31, 88, 'siddharth yadav'),
+(1212, 31, 87, 'Gandhinagar'),
+(1213, 31, 90, 'Donald Trump');
 
 -- --------------------------------------------------------
 
@@ -80,18 +80,18 @@ CREATE TABLE `option` (
 --
 
 INSERT INTO `option` (`option_id`, `ques_id`, `description`, `image`) VALUES
-(45, 83, 'Bharuch', NULL),
-(46, 83, 'Gandhinagar', NULL),
-(47, 83, 'surat', NULL),
-(48, 83, 'vadodara', NULL),
-(49, 84, 'pranav mukharji', NULL),
-(50, 84, 'narendra modi', NULL),
-(51, 84, 'siddharth yadav', NULL),
-(52, 84, 'Ram nath kovind', NULL),
-(53, 86, 'Obama', NULL),
-(54, 86, 'mr. modi', NULL),
-(55, 86, 'Donald Trump', NULL),
-(56, 86, 'none', NULL);
+(57, 87, 'Bharuch', NULL),
+(58, 87, 'Gandhinagar', NULL),
+(59, 87, 'surat', NULL),
+(60, 87, 'vadodara', NULL),
+(61, 88, 'pranav mukharji', NULL),
+(62, 88, 'narendra modi', NULL),
+(63, 88, 'siddharth yadav', NULL),
+(64, 88, 'Ram nath kovind', NULL),
+(65, 90, 'Obama', NULL),
+(66, 90, 'mr. modi', NULL),
+(67, 90, 'Donald Trump', NULL),
+(68, 90, 'none', NULL);
 
 -- --------------------------------------------------------
 
@@ -113,10 +113,10 @@ CREATE TABLE `question` (
 --
 
 INSERT INTO `question` (`ques_id`, `quiz_id`, `description`, `answer`, `has_options`, `image`) VALUES
-(83, 24, 'What is capital of india', 'B', 4, NULL),
-(84, 24, 'Who is president of india', 'A', 4, NULL),
-(85, 24, 'what if short form of COMPUTER SOCIETY OF INDIA', 'CSI', 0, NULL),
-(86, 24, 'Who is president of america', 'C', 4, NULL);
+(87, 25, 'What is capital of gujrat', 'Gandhinagar', 4, NULL),
+(88, 25, 'Who is president of india', 'Ram nath kovind', 4, NULL),
+(89, 25, 'what if short form of COMPUTER SOCIETY OF INDIA', 'CSI', 0, NULL),
+(90, 25, 'Who is president of america', 'Donald Trump', 4, NULL);
 
 -- --------------------------------------------------------
 
@@ -168,7 +168,7 @@ INSERT INTO `user` (`user_id`, `username`, `firstname`, `lastname`, `password`, 
 (28, 'mohit', 'mohit', '', 'mohit123', 24, NULL, NULL, NULL, 0),
 (29, 'arshit', 'arshit', 'vaghasiya', 'arshit123', 24, NULL, NULL, NULL, 0),
 (30, 'rachit', 'rachit', 'shah', 'rachit123', 24, NULL, NULL, NULL, 0),
-(31, 'sid', 'Siddharth', 'Yadav', 'sid123', 25, NULL, NULL, NULL, 0),
+(31, 'sid', 'Siddharth', 'Yadav', 'sid123', 25, 1526561858643, 1526562025358, 164, 3),
 (32, 'anmol', 'anmol', 'Saxena', 'anmol123', 25, NULL, NULL, NULL, 0),
 (33, 'mohit', 'mohit', '', 'mohit123', 25, NULL, NULL, NULL, 0),
 (34, 'arshit', 'arshit', 'vaghasiya', 'arshit123', 25, NULL, NULL, NULL, 0),
@@ -233,17 +233,17 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `answer`
 --
 ALTER TABLE `answer`
-  MODIFY `ans_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1209;
+  MODIFY `ans_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1218;
 --
 -- AUTO_INCREMENT for table `option`
 --
 ALTER TABLE `option`
-  MODIFY `option_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `option_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 --
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-  MODIFY `ques_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `ques_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 --
 -- AUTO_INCREMENT for table `quiz`
 --
