@@ -68,7 +68,22 @@ $(document).ready(function(){
 		stopQuiz();
 	});
 
+	$('.change-theme-button').click(function(){
+		var themeColor = getRandomColor();
+		$(".nav-wrapper").css("background-color", themeColor);
+		$(".page-footer").css("background-color", themeColor);
+		$(".badge").css("background-color", themeColor);
+		$(".change-theme-button").css("background-color", themeColor);
+	});
 
+	$(".nav-wrapper").removeClass('indigo');
+	$(".nav-wrapper").removeClass('darken-3');
+	$(".page-footer").removeClass('indigo');
+	$(".page-footer").removeClass('darken-4');
+	$(".badge").css("background-color", '#283593');
+	$(".nav-wrapper").css("background-color", '#283593');
+	$(".page-footer").css("background-color", '#1a237e');
+	$(".change-theme-button").css("background-color", '##2196f3');
 });
 
 function startQuiz(){
@@ -151,4 +166,13 @@ function showProfile(){
 	$('#Questions').css('display','none');
 	$('#Profile').css('display','block');
 	$('#Rules').css('display','none');
+}
+
+function getRandomColor() {
+   var letters = '0123456789ABCDEF'.split('');
+   var color = '#';
+   for (var i = 0; i < 6; i++ ) {
+       color += letters[Math.floor(Math.random() * 16)];
+   }
+   return color;
 }

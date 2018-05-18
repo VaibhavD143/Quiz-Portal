@@ -60,8 +60,8 @@
 	<div class="row">
 	<?php $questions = get_questions($_COOKIE['quiz_id']);
 	 for($i=1 ; $i<=sizeof($questions) ; $i++) {?>
-		<div class="col s12 m12 white-text">
-			<div class="card horizontal hoverable indigo lighten-3">
+		<div class="col s12 m12">
+			<div class="card horizontal hoverable">
 				<div class="card-image">
 					<?php if($questions[$i-1]['image']){ ?>
 						<img src="data:image/png;base64,<?php echo base64_encode($questions[$i-1]['image']); ?>">
@@ -69,7 +69,7 @@
 				</div>
 				<div class="card-stacked">
 					<div class="card-content">
-						<span class="badge indigo white-text hoverable"><?php echo $i; ?></span>
+						<span class="badge white-text hoverable"><?php echo $i; ?></span>
 						<p><?php echo $questions[$i-1]['description']; ?></p>
 					</div>
 					<div class="card-action">
@@ -78,7 +78,7 @@
 								if($questions[$i-1]['has_options']){
 									$options = get_options($questions[$i-1]['ques_id']);
 									for($j=1 ; $j<=sizeof($options) ; $j++) {?>
-										<label class="col s6 white-text">
+										<label class="col s6">
 											<input name="<?php echo $questions[$i-1]['ques_id']; ?>" type="radio" value="<?php echo $options[$j-1]['description']; ?>"/>
 											<span><?php echo $options[$j-1]['description']; ?></span>
 											<?php if($options[$j-1]['image']){ ?>
@@ -104,5 +104,7 @@
 	</div>
 </form>
 <script>
-	$("#question-form").deserialize("<?php echo get_answers($_COOKIE['user_id']); ?>");
+	<?php if(get_answers($_COOKIE['user_id'])){ ?>
+		$("#question-form").deserialize("<?php echo get_answers($_COOKIE['user_id']); ?>");
+	<?php } ?>
 </script>

@@ -13,4 +13,7 @@
 			<h4><div id="profile-quiz-countdown">Quiz Not Started yet.</div><h4>
 		</div>
 	</div>
+	<div class="fixed-action-btn" >
+		<a class="change-theme-button btn-floating btn-large waves-effect waves-light tooltipped pulse" data-position="top" data-tooltip="Change THEME!!!"><i class="material-icons">wb_sunny</i></a>
+	</div>
 </div>
