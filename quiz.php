@@ -19,9 +19,12 @@
 	$query->data_seek(0);
 	$query->fetch();
 
+	if(isset($_COOKIE['time_elapsed']) && $time_elapsed>$_COOKIE['time_elapsed']){
+		setcookie('time_elapsed', $time_elapsed, time()+86400);
+	}
+
 	setcookie('time_started', $time_started, time()+86400);
 	setcookie('time_completed', $time_completed, time()+86400);
-	setcookie('time_elapsed', $time_elapsed, time()+86400);
 	setcookie('score', $score, time()+86400);
 
 	$query = $database_handler->prepare("SELECT name,duration FROM quiz WHERE quiz_id=?;");
