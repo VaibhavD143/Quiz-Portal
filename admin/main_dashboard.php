@@ -161,9 +161,29 @@ session_start();
 </ul>
 
         
-        
-        
-    
+    <form action="change_colour.php" method="post">
+        <div class="hoverable z-depth-1 col s12 ">
+            <div class="container">
+               <div class="row"></div>
+                
+    Select your favorite color: <input type="color" name="colour" id="myColor">
+
+<p>click on above colour, choose your colour from colour pallet and click on "change theme" button to change it.</p>
+
+<button  class="btn" type="submit" onclick="myFunction()">  <i class="large material-icons">brush</i>change</button>
+
+
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myColor").value;
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
+                
+</div></div></form>    
     </div>
 </div>
 

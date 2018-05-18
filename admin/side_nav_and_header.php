@@ -22,7 +22,31 @@
     <body>
 
 <!-- -------------------------------Nav bar ------------------------------------------------>
-		<nav style="background-color:#455a64;">
+        <?php 
+            include 'connect.php';
+            if($resultset = $database_handler->query("SELECT * from admin;"))
+                            {
+			                     if($row = $resultset->fetch_assoc())
+                                 {
+                                     $colour = $row['colour'];
+                                 }
+                                else
+                                {
+                                    $msg = "Error Changing in theme.";
+                                    $colour = "#455a64";
+                                }
+                            } 
+        else
+        {
+            $msg = "Error Changing in theme.";
+                                    $colour = "#455a64";
+        }
+?>
+            
+                            
+                            
+        
+		<nav style="background-color:<?php echo $colour; ?>">
 			<div class="nav-wrapper hoverable">
 				<div class="row">
 					<div class="col s1 offset-s1">
