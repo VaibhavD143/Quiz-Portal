@@ -33,7 +33,7 @@
                                 else
                                 {
                                     $msg = "Error Changing in theme.";
-                                    $colour = "#455a64";
+                                    $colour = "#455a64";//69 90 100
                                 }
                             } 
         else

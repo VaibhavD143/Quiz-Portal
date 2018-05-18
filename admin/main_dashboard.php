@@ -80,6 +80,7 @@ session_start();
                  </div></div>
                 </form>
     </div>
+    
     <div class="col s4 offset-s1">
     
     
@@ -184,6 +185,8 @@ function myFunction() {
 </script>
                 
 </div></div></form>    
+    
+        
     </div>
 </div>
 
