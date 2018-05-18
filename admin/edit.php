@@ -51,6 +51,7 @@ if(!isset($_SESSION["uname"]))
                         </button> 
                 </div>
                 </form>
+                <a class="btn" href="upload_image.php">click to upload images to question.</a>
 		</div>
 		</div>
 	</div>	
