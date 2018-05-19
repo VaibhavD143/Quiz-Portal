@@ -1,5 +1,7 @@
 <?php
-$colour = $_POST['colour'];
+if(isset($_POST['colour']))
+{
+    $colour = $_POST['colour'];
 
 include 'connect.php';
 
@@ -17,7 +19,7 @@ include 'connect.php';
 			                 }
 else
 $msg = "Theme Updated";
-
+}
 include 'main_dashboard.php';
 
 ?>
