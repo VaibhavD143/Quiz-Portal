@@ -3,9 +3,11 @@
 		<div class="card">
 			<div class="card-content">
 				<span class="card-title">Rules</span>
-				<p>I am a very simple card. I am good at containing small bits of information.
-					I am convenient because I require little markup to use effectively.
-				</p>
+				<p>You have 50 mins to complete this Quiz.</p>
+				<p>Once you start the quiz the timer ticks away and couldn't be reset.</p>
+				<p>There is no negative marking.</p>
+				<p>Each question contains 1 mark.</p>
+
 			</div>
 			<div class="card-action">
 				<a href="#" class="btn green" id="start-button">Start Quiz</a>

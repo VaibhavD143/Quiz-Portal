@@ -74,7 +74,7 @@
 		<header>
 			<nav>
 				<div class="nav-wrapper indigo darken-3">
-					<a href="#" class="brand-logo center">Quized Finished</a>
+					<a href="#" class="brand-logo center">Quiz Finished</a>
 				</div>
 			</nav>
 		</header>
